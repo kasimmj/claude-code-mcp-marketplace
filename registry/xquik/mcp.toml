@@ -1,0 +1,28 @@
+name = "xquik"
+version = "2.4.8"
+description = "Connect AI agents to X search, extraction jobs, monitor events, drafts, and workflow setup."
+author = "Xquik"
+license = "MIT"
+trust_tier = "official"
+homepage = "https://docs.xquik.com/mcp/overview"
+repository = "https://github.com/Xquik-dev/x-twitter-scraper"
+manifest_url = "https://xquik.com/.well-known/mcp.json"
+
+[install]
+type = "remote"
+url = "https://xquik.com/mcp"
+
+[runtime]
+transport = "streamable_http"
+url = "https://xquik.com/mcp"
+env_required = ["XQUIK_API_KEY"]
+headers = { Authorization = "Bearer ${XQUIK_API_KEY}" }
+
+[capabilities]
+tools = ["explore", "xquik"]
+resources = []
+
+[permissions]
+network = ["xquik.com"]
+filesystem = false
+shell = false
